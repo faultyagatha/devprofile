@@ -1,126 +1,73 @@
-// const createCanvas = (document: Document, containerElement: Element): HTMLCanvasElement => {
-//   const canvas: HTMLCanvasElement = document.createElement('canvas');
-//   containerElement.appendChild(canvas);
-//   return canvas;
-// };
-
-
-// import React, { useRef, useState, useEffect } from 'react';
-
-// import { SceneController } from './SceneController';
-
-// type HomeProps = ({
-//   width,
-//   height
-// }: {
-//   width: number,
-//   height: number
-// }) => JSX.Element;
-
-
-// export const Home: HomeProps = ({ width, height }) => {
-
-//   const canvasRef = useRef<HTMLCanvasElement>(null);
-//   const canvas = canvasRef.current as HTMLCanvasElement;
-//   const sceneController = new SceneController(width, height, canvas);
-
-//   useEffect(() => {
-//     const GL = canvas.getContext("webgl");
-//     console.log('webgl context', GL);
-//   });
-
-//   const onResize = () => {
-//     sceneController.onWindowResize();
-//   };
-
-//   const onExit = () => {
-
-//   };
-//   return <canvas ref={canvasRef} width={width} height={height} />;
-// }
-
-import React, { useEffect, useRef, useCallback } from 'react';
+import React from 'react';
 import { SceneController } from './SceneController';
 
-export const Home = () => {
-  const width = 1000;
-  const height = 500;
+interface IHomeProps {
+  width: number;
+  height: number;
+};
 
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const sceneController = new SceneController(width, height, canvasRef.current);
+export class Home extends React.Component {
+  sceneController: SceneController;
+  threeRootElement?: HTMLDivElement | null;
 
-  const initCanvas = () => {
-    const canvas = canvasRef.current as HTMLCanvasElement;
-    const GL = canvas.getContext("webgl");
-    console.log('WebGL is found', GL);
+  constructor(props: IHomeProps) {
+    super(props);
+    this.sceneController = new SceneController(window.innerWidth, 400);
+    console.log(this.sceneController);
+  }
+
+  componentDidMount() {
+    this.addEventListeners();
+    this.update();
   };
 
-  const removeEventListeners = useCallback(() => {
-    window.removeEventListener('resize', handleWindowResize);
-    document.removeEventListener("keydown", handleDocumentKeyDown);
-    document.removeEventListener("keyup", onDocumentKeyUp);
-    if (sceneController) sceneController.dispose();
-  }, []);
-
-  const addEventListeners = useCallback(() => {
-    window.addEventListener('resize', handleWindowResize, false);
-    document.addEventListener("keydown", handleDocumentKeyDown, false);
-    document.addEventListener("keyup", onDocumentKeyUp, false);
-  }, []);
-
-  const handleWindowResize = () => {
-    if (sceneController) {
-      sceneController.onWindowResize();
-      sceneController.update();
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onWindowResize);
+    document.removeEventListener("keydown", this.onDocumentKeyDown);
+    document.removeEventListener("keyup", this.onDocumentKeyUp);
+    if (this.sceneController) {
+      console.log('disposing')
+      this.sceneController.dispose();
     }
   };
 
-  const handleDocumentKeyDown = (e: KeyboardEvent) => {
+  addEventListeners() {
+    window.addEventListener('resize', this.onWindowResize, false);
+    document.addEventListener("keydown", this.onDocumentKeyDown, false);
+    document.addEventListener("keyup", this.onDocumentKeyUp, false);
+  };
+
+  onWindowResize = () => {
+    if (this.sceneController) {
+      this.sceneController.onWindowResize();
+      this.sceneController.update();
+    }
+  };
+
+  onDocumentKeyDown = (e: KeyboardEvent) => {
     e.preventDefault();
     switch (e.keyCode) {
       case 32: // space
-        if (sceneController) sceneController.onKeyDown(e);
+        if (this.sceneController) this.sceneController.onKeyDown(e);
         break;
       default:
     }
   };
 
-  const onDocumentKeyUp = (e: KeyboardEvent) => {
+  onDocumentKeyUp = (e: KeyboardEvent) => {
     e.preventDefault();
-    initCanvas();
-    if (sceneController) sceneController.onKeyUp(e);
+    if (this.sceneController) this.sceneController.onKeyUp(e);
   };
 
-  const update = useCallback(() => {
-    requestAnimationFrame(update);
-    if (sceneController) sceneController.update();
-  }, []);
+  update = () => {
+    requestAnimationFrame(this.update);
+    if (this.sceneController) this.sceneController.update();
+  };
 
-
-  useEffect(() => {
-    initCanvas();
-    addEventListeners();
-    update();
-    return function cleanup() {
-      removeEventListeners();
-    }
-  }, [canvasRef, addEventListeners, removeEventListeners, update]);
-
-  return (
-    <>
-      <canvas ref={canvasRef} />
-      {/* <Text /> */}
-    </>
-  );
+  render() {
+    return (
+      <div ref={element => this.threeRootElement = element}>
+      </div>
+    );
+  }
 };
-
-const Text = () => {
-  return (
-    <div className="Info">
-      Exhibition
-      <a href="https://sketchfab.com/Evanpachon" />
-      <br />
-            Test App.
-    </div>
-  );
-}

@@ -19,7 +19,6 @@ export const useWebGL = (options: UseWebGLOptions) => {
       const canvas = canvasRef.current as HTMLCanvasElement;
       const GL = canvas.getContext("webgl");
       console.log('webgl context', GL);
-
       options.onInit(GL, canvas);
     }
 

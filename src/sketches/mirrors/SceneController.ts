@@ -2,19 +2,22 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+//https://sbcode.net/threejs/scene-camera-renderer/
+//https://github.com/NicolaLC/spaceinvaders-js/blob/feature/webgl/src/gameScripts/game.ts
+
 export class SceneController {
   renderer: THREE.WebGLRenderer;
   width: number;
   height: number;
-  canvas: HTMLDivElement; //HTMLCanvasElement;
+  canvas: HTMLCanvasElement | null;
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
   disposed: boolean;
 
-  constructor(width: number, height: number) {
+  constructor(width: number, height: number, canvas: HTMLCanvasElement | null) {
     this.width = width;
     this.height = height;
-    this.canvas = document.createElement('div');
+    this.canvas = canvas;
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.scene = new THREE.Scene();
@@ -25,15 +28,13 @@ export class SceneController {
   }
 
   setup() {
-    document.body.appendChild(this.canvas);
+    // document.body.appendChild(this.canvas);
     console.log('canvas is added');
     this.renderer.setSize(this.width, this.height);
-    //document.getElementById("root")?.appendChild(this.renderer.domElement);
-    //document.body.appendChild(this.renderer.domElement);
-    this.canvas.appendChild(this.renderer.domElement);
+    if (this.canvas) this.canvas.appendChild(this.renderer.domElement);
     this.scene.background = new THREE.Color(0x5C80BC);
-
     this.setupCamera();
+    // this.render();
   }
 
   setupCamera() {
@@ -87,7 +88,7 @@ export class SceneController {
     // });
     this.renderer.dispose();
     // document.body.removeChild(this.renderer.domElement);
-    this.canvas.removeChild(this.renderer.domElement);
+    //if (this.canvas && this.canvas.hasChildNodes) this.canvas.removeChild(this.renderer.domElement);
   };
 
 
