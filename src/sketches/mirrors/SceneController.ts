@@ -9,17 +9,20 @@ export class SceneController {
   renderer: THREE.WebGLRenderer;
   width: number;
   height: number;
-  canvas: HTMLCanvasElement | null;
+  canvas: HTMLCanvasElement;//| null;
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
   disposed: boolean;
 
-  constructor(width: number, height: number, canvas: HTMLCanvasElement | null) {
+  constructor(width: number, height: number, canvas: HTMLCanvasElement) {
     this.width = width;
     this.height = height;
     this.canvas = canvas;
 
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    // const context = this.canvas.getContext('webgl2', { antialias: true });
+    this.renderer = new THREE.WebGLRenderer({ canvas });
+
+    //this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera();
     this.disposed = false;
@@ -31,10 +34,10 @@ export class SceneController {
     // document.body.appendChild(this.canvas);
     console.log('canvas is added');
     this.renderer.setSize(this.width, this.height);
-    if (this.canvas) this.canvas.appendChild(this.renderer.domElement);
+    //if (this.canvas) this.canvas.appendChild(this.renderer.domElement);
     this.scene.background = new THREE.Color(0x5C80BC);
     this.setupCamera();
-    // this.render();
+    this.render();
   }
 
   setupCamera() {
