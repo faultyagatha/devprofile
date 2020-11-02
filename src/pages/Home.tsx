@@ -1,19 +1,23 @@
 import React from 'react';
+import { Container, Row } from 'react-bootstrap';
 
 import Menu from '../components/Menu';
+import Footer from '../components/Footer';
 import { Home } from '../home';
-import { Mirrors } from '../sketches/mirrors';
+import { Sketches } from '../components/Sketches';
 
 export const HomePage = () => {
-  const width = 1000;
+  const width = window.innerWidth;
   const height = 500;
   return (
-    <div>
+    <>
       <Menu />
-      {/* <Home width={width} height={height} /> */}
-      {/* <Home /> */}
-      <Mirrors />
-      Home page
-    </div>
+      <Row>
+        <Home width={width} height={height} />
+      </Row>
+      <h2 id='about' className="text-center">About</h2>
+      <Sketches />
+      <Footer />
+    </>
   )
 }

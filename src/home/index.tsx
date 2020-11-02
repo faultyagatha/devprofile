@@ -1,73 +1,52 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { SceneController } from './SceneController';
 
-interface IHomeProps {
-  width: number;
-  height: number;
+type HomeProps = ({
+  width,
+  height
+}: {
+  width: number,
+  height: number
+}) => JSX.Element;
+
+export const Home: HomeProps = ({ width, height }) => {
+  const ref = useRef<HTMLCanvasElement>(null);
+  let sceneController: SceneController;
+
+  const update = () => {
+    requestAnimationFrame(update);
+    sceneController.update();
+  };
+
+  const addEventListeners = () => {
+    window.addEventListener('resize', handleWindowResize, false);
+    // document.addEventListener("keydown", onDocumentKeyDown, false);
+    // document.addEventListener("keyup", onDocumentKeyUp, false);
+  };
+
+  const handleWindowResize = () => {
+    sceneController.onWindowResize();
+    sceneController.update();
+  };
+
+  const cleanup = () => {
+    sceneController.dispose();
+    window.removeEventListener('resize', handleWindowResize);
+  };
+
+  useEffect(() => {
+    console.log('rendered');
+    if (ref.current) {
+      addEventListeners();
+      sceneController = new SceneController(width, height, ref.current);
+      update();
+    }
+
+    return () => {
+      cleanup();
+    }
+  }, [ref]);
+
+  return <canvas ref={ref} />;
 };
 
-export class Home extends React.Component {
-  sceneController: SceneController;
-  threeRootElement?: HTMLDivElement | null;
-
-  constructor(props: IHomeProps) {
-    super(props);
-    this.sceneController = new SceneController(window.innerWidth, 400);
-    console.log(this.sceneController);
-  }
-
-  componentDidMount() {
-    this.addEventListeners();
-    this.update();
-  };
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize);
-    document.removeEventListener("keydown", this.onDocumentKeyDown);
-    document.removeEventListener("keyup", this.onDocumentKeyUp);
-    if (this.sceneController) {
-      console.log('disposing')
-      this.sceneController.dispose();
-    }
-  };
-
-  addEventListeners() {
-    window.addEventListener('resize', this.onWindowResize, false);
-    document.addEventListener("keydown", this.onDocumentKeyDown, false);
-    document.addEventListener("keyup", this.onDocumentKeyUp, false);
-  };
-
-  onWindowResize = () => {
-    if (this.sceneController) {
-      this.sceneController.onWindowResize();
-      this.sceneController.update();
-    }
-  };
-
-  onDocumentKeyDown = (e: KeyboardEvent) => {
-    e.preventDefault();
-    switch (e.keyCode) {
-      case 32: // space
-        if (this.sceneController) this.sceneController.onKeyDown(e);
-        break;
-      default:
-    }
-  };
-
-  onDocumentKeyUp = (e: KeyboardEvent) => {
-    e.preventDefault();
-    if (this.sceneController) this.sceneController.onKeyUp(e);
-  };
-
-  update = () => {
-    requestAnimationFrame(this.update);
-    if (this.sceneController) this.sceneController.update();
-  };
-
-  render() {
-    return (
-      <div ref={element => this.threeRootElement = element}>
-      </div>
-    );
-  }
-};

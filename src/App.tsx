@@ -1,12 +1,15 @@
 import React from 'react';
+import { Container } from "react-bootstrap";
 
-import { HomePage } from './pages/Home';
+import { Routes } from './Routes';
 
 const App = () => {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <>
+      <Container className="py-3" fluid>
+        <Routes />
+      </Container>
+    </>
   );
 }
 

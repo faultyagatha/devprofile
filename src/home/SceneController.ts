@@ -2,38 +2,46 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+import { coloursToArray } from '../sketches/helpers';
+
+//https://sbcode.net/threejs/scene-camera-renderer/
+//https://github.com/NicolaLC/spaceinvaders-js/blob/feature/webgl/src/gameScripts/game.ts
+
 export class SceneController {
   renderer: THREE.WebGLRenderer;
   width: number;
   height: number;
-  canvas: HTMLDivElement; //HTMLCanvasElement;
+  canvas: HTMLCanvasElement;
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
   disposed: boolean;
+  mesh: THREE.Mesh;
+  colourArr: THREE.Color[];
 
-  constructor(width: number, height: number) {
+  constructor(width: number, height: number, canvas: HTMLCanvasElement) {
     this.width = width;
     this.height = height;
-    this.canvas = document.createElement('div');
+    this.canvas = canvas;
 
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera();
     this.disposed = false;
+    this.mesh = new THREE.Mesh();
+    this.colourArr = (coloursToArray)('https://coolors.co/f8ffe5-06d6a0-1b9aaa-ef476f-ffc43d');
 
     this.setup();
   }
 
   setup() {
-    document.body.appendChild(this.canvas);
-    console.log('canvas is added');
     this.renderer.setSize(this.width, this.height);
-    //document.getElementById("root")?.appendChild(this.renderer.domElement);
-    //document.body.appendChild(this.renderer.domElement);
-    this.canvas.appendChild(this.renderer.domElement);
     this.scene.background = new THREE.Color(0x5C80BC);
-
+    this.scene.fog = new THREE.Fog(0x5C80BC, 50, 200);
     this.setupCamera();
+    this.setupLight();
+    this.setupGeometry();
+    this.render(); //render once on setup in useEffect hook
+    console.log('setup done');
   }
 
   setupCamera() {
@@ -47,14 +55,29 @@ export class SceneController {
     this.camera.lookAt(new THREE.Vector3(0, 0, 0));
   };
 
+  setupLight() {
+    const pointLight = new THREE.PointLight(this.colourArr[4], 2);
+    pointLight.position.set(0.5, -0.2, 0);
+    this.scene.add(pointLight);
+
+    const hemiLight = new THREE.HemisphereLight(this.colourArr[1], this.colourArr[4], 1);
+    hemiLight.position.set(0, 0.5, 0);
+    this.scene.add(hemiLight);
+
+    const dirLight = new THREE.DirectionalLight(this.colourArr[2], 1);
+    dirLight.position.set(0, 0.5, 0);
+    this.scene.add(dirLight);
+  };
+
   setupGeometry() {
-    let geometry = new THREE.IcosahedronGeometry(3, 0);
-    let material = new THREE.MeshPhongMaterial({
-      color: 0x020b13,
-      shininess: 100
+    const geometry = new THREE.IcosahedronGeometry(1, 0);
+    const material = new THREE.MeshPhongMaterial({
+      color: this.colourArr[1],
+      shininess: 10
     });
-    let mesh = new THREE.Mesh(geometry, material);
-    this.scene.add(mesh);
+    this.mesh.geometry = geometry;
+    this.mesh.material = material;//new THREE.Mesh(geometry, material);
+    this.scene.add(this.mesh);
   };
 
   render() {
@@ -63,6 +86,7 @@ export class SceneController {
 
   update() {
     if (this.disposed) return;
+    this.mesh.rotation.x += 0.01;
     // if (this.controls) this.controls.update();
     // if (this.isCamOrbit) this.orbitCamera(Date.now() * 0.001);
     // this.updateSceneSubjects(Date.now() * 0.005);
@@ -86,10 +110,7 @@ export class SceneController {
     //   }
     // });
     this.renderer.dispose();
-    // document.body.removeChild(this.renderer.domElement);
-    this.canvas.removeChild(this.renderer.domElement);
   };
-
 
   onWindowResize() {
     this.camera.aspect = this.width / this.height;
@@ -97,11 +118,3 @@ export class SceneController {
     this.renderer.setSize(this.width, this.height);
   };
 };
-
-// function coloursToArray(str) 
-// {
-//     return str.split('/').pop().split('-').map(function (hex) 
-//     {
-//         return new THREE.Color('#' + hex);
-//     });
-// };

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Col } from "react-bootstrap";
 
-import { Mirrors } from '../sketches/mirrors';
+import { Mirrors } from '../../sketches/mirrors';
 
-export const SketchesPage = () => {
+export const Sketches = () => {
   const width: number = 500;
   const height: number = 500;
   return (

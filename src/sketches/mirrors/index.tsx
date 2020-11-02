@@ -91,17 +91,62 @@
 //   );
 // };
 
-import React, { useEffect, useRef, useCallback } from 'react';
-import * as THREE from "three";
+import React, { useEffect, useRef, useState } from 'react';
 import { SceneController } from './SceneController';
 
-export const Mirrors = () => {
+type MirrorProps = ({
+  width,
+  height
+}: {
+  width: number,
+  height: number
+}) => JSX.Element;
+
+export const Mirrors: MirrorProps = ({ width, height }) => {
   const ref = useRef<HTMLCanvasElement>(null);
-  const width: number = 1000;
-  const height: number = 500;
+  // const width: number = 1000;
+  // const height: number = 500;
+
+  let sceneController: SceneController;
+
+  const update = () => {
+    requestAnimationFrame(update);
+    sceneController.update();
+  };
+
+  const addEventListeners = () => {
+    window.addEventListener('resize', handleWindowResize, false);
+    // document.addEventListener("keydown", onDocumentKeyDown, false);
+    // document.addEventListener("keyup", onDocumentKeyUp, false);
+  };
+
+  const handleWindowResize = () => {
+    sceneController.onWindowResize();
+    sceneController.update();
+  };
+
+  const cleanup = () => {
+    sceneController.dispose();
+    window.removeEventListener('resize', handleWindowResize);
+  };
 
   useEffect(() => {
-    // const scene = new THREE.Scene();
+    console.log('rendered');
+    if (ref.current) {
+      addEventListeners();
+      sceneController = new SceneController(width, height, ref.current);
+      update();
+    }
+
+    return () => {
+      cleanup();
+    }
+  }, [ref]);
+
+  return <canvas ref={ref} />;
+}
+
+  // const scene = new THREE.Scene();
     // const camera = new THREE.PerspectiveCamera(
     //   75,
     //   window.innerWidth / window.innerHeight,
@@ -126,18 +171,3 @@ export const Mirrors = () => {
     //   renderer.render(scene, camera);
     // };
     // animate();
-    // console.log(ref);
-
-    if (ref.current) {
-      let sceneController = new SceneController(width, height, ref.current);
-    }
-
-    return () => {
-      // Callback to cleanup three js, cancel animationFrame, etc
-    }
-  }, [ref]);
-
-  console.log(ref);
-
-  return <canvas ref={ref} />;
-}
