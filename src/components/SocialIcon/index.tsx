@@ -16,10 +16,10 @@ import {
 
 interface ISocialIcon {
   name: string;
-  params: any;
+  [otherProps: string]: any;
 }
 
-export const SocialIcon = ({ name, ...params }: ISocialIcon): JSX.Element => {
+export const SocialIcon = ({ name, ...otherProps }: ISocialIcon): JSX.Element => {
   const icons = {
     behance: FaBehance,
     dribbble: FaDribbble,
@@ -37,5 +37,5 @@ export const SocialIcon = ({ name, ...params }: ISocialIcon): JSX.Element => {
 
   const Icon = icons[name]
 
-  return Icon ? <Icon {...params} /> : null
+  return Icon ? <Icon {...otherProps} /> : null
 }

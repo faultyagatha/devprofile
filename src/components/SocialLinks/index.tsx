@@ -18,7 +18,7 @@ export const SocialLinks = ({ social }: ISocialLinks): JSX.Element => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            {/* <SocialIcon name={network} className="w-6 h-6" /> */}
+            <SocialIcon name={network} className="w-6 h-6" />
           </a>
         )
       })}

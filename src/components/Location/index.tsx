@@ -18,6 +18,7 @@ export const Location = ({ location, remote }: ILocation): JSX.Element => (
     </div>
     {remote && (
       <div className="text-xs uppercase mt-2 font-semibold text-front font-header">
+        <span className="inline-block w-2 h-2 rounded-full mr-1 bg-green-500"></span>
         Available for remote work
       </div>
     )}

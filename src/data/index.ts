@@ -8,22 +8,23 @@ export const data = {
     company: "Integrify",
     for_hire: true,
     remote: true,
-    about: "Bring to the table win-win survival strategies to ensure proactive domination",
+    about: "I  am a full-stack web developer and creative technologist with practical experience in project management and strong communication skills. I can handle complex tasks well and take responsibility.",
     skills: [
-      "JavaScript",
       "TypeScript",
+      "JavaScript",
       "HTML / CSS",
-      "Node.js"
+      "Node",
+      "MongoDB"
     ],
     tools: [
       "React",
+      "Github",
       "Docker",
-      "Firebase",
-      "Microservices",
-      "WebGL"
+      "WebGL",
+      // "Firebase",
     ],
     focus: {
-      intro: "Learning Microservices",
+      intro: "Microservices",
       url: "https://gatsbyjs.org"
     },
   },

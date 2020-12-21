@@ -35,17 +35,19 @@ export interface IProfileImage {
   name: string;
 }
 
+interface ISocial {
+  network: string;
+  username?: string;
+  url: string;
+}
+
 export interface ISocialLinks {
-  social: {
-    network: string;
-    username?: string;
-    url: string;
-  }[];
+  social: ISocial[];
 }
 
 export interface ISidebar {
   profile: IProfile;
-  social?: ISocialLinks;
+  social: ISocial[];
 }
 
 export interface IMainBody {

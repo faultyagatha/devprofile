@@ -12,7 +12,7 @@ import { IMainBody } from '../../interfaces';
 export const MainBody = ({ profile, projects }: IMainBody): JSX.Element => {
   console.log(profile);
   return (
-    <main className="lg:w-2/3 lg:pl-8 xl:pl-12">
+    <main className="lg:w-3/4 lg:pl-8 xl:pl-12">
       <Summary profile={profile} />
 
       <div className="flex flex-wrap">

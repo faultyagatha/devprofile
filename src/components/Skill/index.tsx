@@ -1,19 +1,17 @@
 import React from "react";
-const skillSvg = "./skill.svg";
+// import { DiJavascript1, DiNodejs, DiHtml5 } from "react-icons/di";
 
 interface ISkill {
   skill: string;
-  i: number;
 }
 
-export const Skill = ({ skill, i }: ISkill): JSX.Element => (
-  <li
-    className={`relative flex justify-center items-center rounded-full border-2 border-skill-${i}`}
-  >
-    <span className="absolute font-header font-semibold text-front text-sm md:text-base px-2 text-center">
+export const Skill = ({ skill }: ISkill): JSX.Element => (
+  <li className="relative flex justify-center items-center rounded-full border-1 border-blue-500 border-opacity-75 md:border-opacity-50 m-8">
+    <div className="absolute font-header font-semibold text-front text-sm md:text-base px-2 text-center">
       {skill}
-    </span>
-    {skillSvg}
-    {/* <SkillSvg className={`w-full text-skill-${i} opacity-75 m-2`} /> */}
+    </div>
+    {/* <DiJavascript1 className={`w-full text-skill-${i} h-16 opacity-25 m-2`} />
+    <DiNodejs className={`w-full text-skill-${i} h-16 opacity-25 m-2`} />
+    <DiHtml5 className={`w-full text-skill-${i} h-16 opacity-25 m-2`} /> */}
   </li>
 );
