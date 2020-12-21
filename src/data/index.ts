@@ -1,34 +1,52 @@
 export const data = {
   profile: {
     name: "Valeria Barvinska",
-    email: "john.doe@change.me",
+    email: "valeria.barvinska(at)gmail.com",
     profession: "Full-stack developer",
-    image: "images/profile.jpg",
+    image: "/img/profile.jpg",
     location: "Berlin, Germany",
     company: "Integrify",
     for_hire: true,
+    remote: true,
     about: "Bring to the table win-win survival strategies to ensure proactive domination",
+    skills: [
+      "JavaScript",
+      "TypeScript",
+      "HTML / CSS",
+      "Node.js"
+    ],
+    tools: [
+      "React",
+      "Docker",
+      "Firebase",
+      "Microservices",
+      "WebGL"
+    ],
+    focus: {
+      intro: "Learning Microservices",
+      url: "https://gatsbyjs.org"
+    },
   },
-  focus: {
-    intro: "Learning Gatsby",
-    focus_url: "https://gatsbyjs.org"
-  },
-  skills: [
-    "JavaScript",
-    "TypeScript",
-    "HTML / CSS",
-    "Node.js"
+  projects: [
+    {
+      name: "Microservices",
+      image: "img/profile.jpg",
+      url: "https://gatsbyjs.org",
+      description: "learn microservices",
+      status: "complete",
+      tags: ["React", "Docker", "Node.js"],
+      icon: "images/profile.jpg",
+    },
+    {
+      name: "Microservices",
+      image: "img/profile.jpg",
+      url: "https://gatsbyjs.org",
+      description: "learn microservices",
+      status: "complete",
+      tags: ["React", "Docker", "Node.js"],
+      icon: "images/profile.jpg",
+    }
   ],
-  tools: [
-    "React",
-    "Docker",
-    "Firebase",
-    "Microservices",
-    "WebGL"
-  ],
-  projects: {
-
-  },
   social: [
     {
       network: "Twitter",

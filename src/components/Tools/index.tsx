@@ -1,6 +1,11 @@
 import React from "react";
 
-export const Tools = ({ tools }) => (
+
+interface ITools {
+  tools: string[];
+}
+
+export const Tools = ({ tools }: ITools): JSX.Element => (
   <>
     <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
       Main tools

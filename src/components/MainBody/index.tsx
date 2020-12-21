@@ -1,12 +1,15 @@
 import React from "react";
+
 import { About } from "../About";
-// import Projects from "../projects/projects"
+import { Projects } from "../Projects";
 import { Skills } from "../Skills";
 import { Summary } from "../Summary";
 import { Tools } from "../Tools";
 // import WorkHistory from "../work-history/work-history"
 
-export const MainBody = ({ projects, profile }) => {
+import { IMainBody } from '../../interfaces';
+
+export const MainBody = ({ profile, projects }: IMainBody): JSX.Element => {
   console.log(profile);
   return (
     <main className="lg:w-2/3 lg:pl-8 xl:pl-12">
@@ -22,8 +25,8 @@ export const MainBody = ({ projects, profile }) => {
       </div>
 
       {profile.about && <About about={profile.about} />}
-      {/* <Projects projects={projects} />
-      <WorkHistory history={history} /> */}
+      <Projects projects={projects} />
+      {/* <WorkHistory history={history} /> */}
     </main>
   )
 }

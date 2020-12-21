@@ -2,7 +2,7 @@ import React from 'react';
 
 // showThemeLogo = true
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   return (
     <footer className="bg-front mt-16 pt-8 pb-16">
       <div className="md:max-w-screen-sm lg:max-w-screen-xl mx-auto px-4 flex items-center">

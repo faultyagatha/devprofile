@@ -1,6 +1,10 @@
 import React from "react";
 
-export const About = ({ about }) => (
+interface IAbout {
+  about: string;
+}
+
+export const About = ({ about }: IAbout): JSX.Element => (
   <>
     <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
       About

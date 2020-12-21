@@ -1,7 +1,11 @@
 import React from "react";
 import { Skill } from "../Skill";
 
-export const Skills = ({ skills }) => (
+interface ISkills {
+  skills: string[];
+}
+
+export const Skills = ({ skills }: ISkills): JSX.Element => (
   <>
     <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
       Top skills

@@ -1,7 +1,9 @@
 import React from "react";
 
-export const ProfileImage = ({ image, name }) => (
-  <div className="relative inline-block leading-none">
+import { IProfileImage } from '../../interfaces';
+
+export const ProfileImage = ({ image, name }: IProfileImage): JSX.Element => (
+  <div className="relative inline-block leading-none w-16 md:w-32 lg:w-48">
     <img
       src={image}
       alt={name}
