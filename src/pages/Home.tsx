@@ -1,23 +1,23 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
 
-import Menu from '../components/Menu';
+import { Menu } from '../components/Menu';
+import { MainBody } from '../components/MainBody';
 import Footer from '../components/Footer';
-import { Home } from '../home';
-import { Sketches } from '../components/Sketches';
+import { data } from '../data';
 
 export const HomePage = () => {
-  const width = window.innerWidth;
-  const height = 500;
+  const { profile, projects, social } = data;
   return (
-    <>
-      <Menu />
-      <Row>
-        <Home width={width} height={height} />
-      </Row>
-      <h2 id='about' className="text-center">About</h2>
-      <Sketches />
+    <div className="antialiased bg-back leading-normal font-text text-front">
+      <div className="md:max-w-screen-sm lg:max-w-screen-xl mx-auto px-4 flex flex-wrap pt-4 my-8">
+        <Menu profile={profile} social={social} />
+
+        <MainBody
+          profile={profile}
+          projects={projects}
+        />
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }

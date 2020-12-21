@@ -1,5 +1,4 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
 
 export const Loader = () => {
   const style = {
@@ -9,8 +8,8 @@ export const Loader = () => {
     display: "block",
   };
   return (
-    <Spinner animation="border" role="status" style={style}>
-      <span className="sr-only">Loading...</span>
-    </Spinner>
-  );
+    <>
+      ...Loading
+    </>
+  )
 };
