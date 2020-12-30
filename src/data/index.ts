@@ -13,15 +13,15 @@ export const data = {
       "TypeScript",
       "JavaScript",
       "HTML / CSS",
-      "Node",
-      "MongoDB"
+      "Node.js",
+      "MongoDB",
+      "Three.js"
     ],
     tools: [
       "React",
       "Github",
       "Docker",
-      "WebGL",
-      // "Firebase",
+      "WebGL"
     ],
     focus: {
       intro: "Microservices",
@@ -30,21 +30,30 @@ export const data = {
   },
   projects: [
     {
-      name: "Microservices",
-      image: "img/profile.jpg",
-      url: "https://gatsbyjs.org",
-      description: "learn microservices",
+      name: "Custom Web Framework",
+      image: "img/project-ts.jpeg",
+      url: "https://github.com/faultyagatha/custom-web-framework-ts",
+      description: "Created to learn advanced design patterns in Typescript.",
       status: "complete",
-      tags: ["React", "Docker", "Node.js"],
+      tags: ["Typescript"],
       icon: "images/profile.jpg",
     },
     {
-      name: "Microservices",
-      image: "img/profile.jpg",
-      url: "https://gatsbyjs.org",
-      description: "learn microservices",
+      name: "Flatuicolors-clone",
+      image: "img/project-flatui-col.png",
+      url: "https://faultyagatha.github.io/flatuicolors-clone/",
+      description: "A clone of flatuicolors.com app created to learn Material UI.",
       status: "complete",
-      tags: ["React", "Docker", "Node.js"],
+      tags: ["Typescript", "React", "Redux", "Material UI"],
+      icon: "img/project-flatui-col.png",
+    },
+    {
+      name: "E-commerce App",
+      image: "img/project-e-com-app.png",
+      url: "https://github.com/faultyagatha/backend-typescript",
+      description: "E-commerce website selling VR experience",
+      status: "complete",
+      tags: ["Typescript", "React", "Redux", "Express", "MongoDB"],
       icon: "images/profile.jpg",
     }
   ],

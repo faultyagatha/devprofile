@@ -1,9 +1,7 @@
 import React from "react";
-// import { DiJavascript1, DiNodejs, DiHtml5 } from "react-icons/di";
 
-interface ISkill {
-  skill: string;
-}
+import { ISkill } from '../../interfaces';
+// import { DiJavascript1, DiNodejs, DiHtml5 } from "react-icons/di";
 
 export const Skill = ({ skill }: ISkill): JSX.Element => (
   <li className="relative flex justify-center items-center rounded-full border-1 border-blue-500 border-opacity-75 md:border-opacity-50 m-8">

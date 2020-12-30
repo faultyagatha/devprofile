@@ -54,3 +54,13 @@ export interface IMainBody {
   profile: IProfile;
   projects: IProject[];
 }
+
+export interface ISkill {
+  skill: string;
+}
+
+export interface ISkills {
+  skills: string[];
+}
+
+

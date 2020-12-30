@@ -18,7 +18,7 @@ export const Project = ({ name, image, url, description, status, tags, icon }: I
   return (
     <div className="border-t-4 border-line relative flex flex-wrap bg-back-light p-4 lg:p-8 bg-no-repeat text-sm mb-6">
       {image && (
-        <div className="w-full pb-4 lg:w-2/5 lg:pr-8 lg:pb-0">
+        <div className="max-w-7xl pb-4 lg:w-2/5 lg:pr-8 lg:pb-0 transition duration-500 ease-in-out filter-grayscale hover:filter-none transform hover:scale-110 ...">
           <img src={image} alt={name} />
         </div>
       )}
