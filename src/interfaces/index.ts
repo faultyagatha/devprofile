@@ -67,6 +67,7 @@ export interface ISkills {
 export interface ILocation {
   location: string;
   remote: boolean;
+  email: string;
 }
 
 
