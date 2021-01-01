@@ -19,6 +19,7 @@ export interface IProfile {
 export interface IProject {
   name: string;
   image: string;
+  liveUrl: string;
   url: string;
   description: string;
   status: string;
@@ -61,6 +62,11 @@ export interface ISkill {
 
 export interface ISkills {
   skills: string[];
+}
+
+export interface ILocation {
+  location: string;
+  remote: boolean;
 }
 
 

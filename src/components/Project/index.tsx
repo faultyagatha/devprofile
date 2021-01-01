@@ -7,14 +7,14 @@ import { ProjectTags } from "../ProjectTags";
 interface IProject {
   name: string;
   image: string;
+  liveUrl: string;
   url: string;
   description: string;
   status: string;
   tags: string[];
-  icon: string;
 }
 
-export const Project = ({ name, image, url, description, status, tags, icon }: IProject): JSX.Element => {
+export const Project = ({ name, image, liveUrl, url, description, status, tags }: IProject): JSX.Element => {
   return (
     <div className="border-t-4 border-line relative flex flex-wrap bg-back-light p-4 lg:p-8 bg-no-repeat text-sm mb-6">
       {image && (
@@ -24,23 +24,28 @@ export const Project = ({ name, image, url, description, status, tags, icon }: I
       )}
       <div className="lg:flex-1">
         <h4 className="font-bold">{name}</h4>
-        {url && (
+        {liveUrl && (
           <a
             className="text-front underline break-all hover:opacity-75 transition-opacity duration-150"
-            href={url}
+            href={liveUrl}
             rel="noreferrer noopener"
             target="_blank"
           >
-            {url}
+            see live
           </a>
         )}
         <p className="w-full py-4 whitespace-pre-line">{description}</p>
         <ul className="pr-2">
-          {status && <ProjectStatus status={status} />}
-          {tags && <ProjectTags tags={tags} />}
+          <p>{status && <ProjectStatus status={status} />}</p>
+          <br />{tags && <ProjectTags tags={tags} />}
         </ul>
-
-        {icon && <ProjectIcon icon={icon} />}
+        <a
+          aria-label="website"
+          className="inline-block text-front opacity-50 hover:opacity-75 h-4 w-4 transition-opacity duration-150"
+          href={url}
+          rel="noopener noreferrer"
+          target="_blank"
+        ><ProjectIcon /></a>
       </div>
     </div>
   )

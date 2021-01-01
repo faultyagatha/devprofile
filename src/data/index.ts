@@ -25,7 +25,7 @@ export const data = {
     ],
     focus: {
       intro: "Microservices",
-      url: "https://gatsbyjs.org"
+      url: "https://github.com/faultyagatha/stubhub-clone"
     },
   },
   projects: [
@@ -41,7 +41,8 @@ export const data = {
     {
       name: "Flatuicolors-clone",
       image: "img/project-flatui-col.png",
-      url: "https://faultyagatha.github.io/flatuicolors-clone/",
+      liveUrl: "https://faultyagatha.github.io/flatuicolors-clone/",
+      url: "https://github.com/faultyagatha/flatuicolors-clone",
       description: "A clone of flatuicolors.com app created to learn Material UI.",
       status: "complete",
       tags: ["Typescript", "React", "Redux", "Material UI"],
@@ -59,19 +60,14 @@ export const data = {
   ],
   social: [
     {
-      network: "Twitter",
-      username: "andrioid",
-      url: "https://twitter.com/andrioid"
-    },
-    {
       network: "Github",
-      username: "andrioid",
-      url: "https://github.com/andrioid"
+      username: "faultyagatha",
+      url: "https://github.com/faultyagatha"
     },
     {
       network: "LinkedIn",
-      username: "andriosk",
-      url: "https://www.linkedin.com/in/andriosk/"
+      username: "valeria-barvinska",
+      url: "https://www.linkedin.com/in/valeria-barvinska/"
     }
   ]
 }

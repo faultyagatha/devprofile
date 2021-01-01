@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCompass } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 import { ISummary } from '../../interfaces';
 
@@ -34,7 +34,7 @@ export const Summary = ({ profile }: ISummary): JSX.Element => (
               rel="noopener noreferrer"
               target="_blank"
             >
-              <FaCompass />
+              <FaGithub />
             </a>
           </div>
         )}

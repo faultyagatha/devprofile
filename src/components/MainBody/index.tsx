@@ -5,7 +5,6 @@ import { Projects } from "../Projects";
 import { Skills } from "../Skills";
 import { Summary } from "../Summary";
 import { Tools } from "../Tools";
-// import WorkHistory from "../work-history/work-history"
 
 import { IMainBody } from '../../interfaces';
 
@@ -26,7 +25,6 @@ export const MainBody = ({ profile, projects }: IMainBody): JSX.Element => {
 
       {profile.about && <About about={profile.about} />}
       <Projects projects={projects} />
-      {/* <WorkHistory history={history} /> */}
     </main>
-  )
+  );
 }

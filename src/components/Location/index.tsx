@@ -1,10 +1,7 @@
 import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-interface ILocation {
-  location: string;
-  remote: boolean;
-}
+import { ILocation } from '../../interfaces';
 
 export const Location = ({ location, remote }: ILocation): JSX.Element => (
   <>
