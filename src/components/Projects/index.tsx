@@ -21,13 +21,17 @@ export const Projects = ({ projects }: IProject): JSX.Element => (
       Projects
     </h5>
     <p>Below is a short list of my work-in progress and finished web projects. For more just hit my github link. </p>
-    <p>If you want to see me colourful and creative check my <a
-      href="https://faultyagatha.github.io/"
-      className="text-front underline break-all hover:opacity-75 transition-opacity duration-150"
-      rel="noreferrer noopener"
-      target="_blank"
-    >other self</a>.
-      </p>
+    <p>
+      <button
+        className="text-white bg-gradient-to-r from-green-400 to-blue-500 ...">
+        <a
+          href="https://faultyagatha.github.io/"
+          className="text-white m-1.5 no-underline hover:underline ...hover:opacity-75 transition-opacity duration-150"
+          rel="noreferrer noopener"
+          target="_blank"
+        > If you want to see me colourful and playful check my other self. It willl make you smile. I promise.</a>
+      </button>
+    </p>
     <br />
     {projects.map((project, i) => (
       <Project key={`${project.name}_${i}`} {...project} />

@@ -8,7 +8,7 @@ interface ITools {
 export const Tools = ({ tools }: ITools): JSX.Element => (
   <>
     <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
-      Main tools
+      Frameworks
     </h5>
     <ul className="flex-col mt-2">
       {tools.map(tool => (

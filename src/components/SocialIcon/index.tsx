@@ -1,10 +1,8 @@
 import React from "react";
 import {
   FaGithub,
-  FaMediumM,
   FaInstagram,
-  FaLinkedinIn,
-  FaTwitter
+  FaLinkedinIn
 } from "react-icons/fa";
 
 interface ISocialIcon {
@@ -15,13 +13,11 @@ interface ISocialIcon {
 export const SocialIcon = ({ name, ...otherProps }: ISocialIcon): JSX.Element => {
   const icons = {
     github: FaGithub,
-    medium: FaMediumM,
     instagram: FaInstagram,
-    linkedin: FaLinkedinIn,
-    twitter: FaTwitter
+    linkedin: FaLinkedinIn
   }
 
-  const Icon = icons[name]
+  const Icon = icons[name];
 
   return Icon ? <Icon {...otherProps} /> : null
 }

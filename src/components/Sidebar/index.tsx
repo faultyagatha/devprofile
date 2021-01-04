@@ -8,13 +8,13 @@ import { ISidebar } from '../../interfaces';
 
 export const Sidebar = ({ profile, social }: ISidebar): JSX.Element => {
   return (
-    <aside className="w-full lg:w-1/4 lg:border-r border-line lg:px-6 xl:px-12">
+    <aside className="flex justify-center w-full lg:w-1/4 lg:border-r border-line lg:px-6 xl:px-12">
       <div className="flex flex-col justify-between">
         <div>
           <h2 className="font-header font-light text-front text-2xl leading-none mb-4">
             {profile.profession}
           </h2>
-          <h1 className="font-header font-black text-front text-4xl leading-none break-words mb-6">
+          <h1 className="font-header text-gray-500 font-black text-front text-4xl leading-none break-words mb-6">
             {profile.name}
           </h1>
           {profile.image && (
@@ -28,21 +28,12 @@ export const Sidebar = ({ profile, social }: ISidebar): JSX.Element => {
               email={profile.email}
             />
           )}
-        </div>
-        <div className="pt-8 lg:py-0">
-          <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
-            Connect
-        </h5>
-          <SocialLinks social={social} />
+          <br />
+          <div className="inline-flex items-center bg-front mt-6 w-full">
+            <SocialLinks social={social} />
+          </div>
         </div>
       </div>
-      {/* <div className="pt-8 pb-12 lg:py-0">
-          <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
-            Connect
-        </h5>
-          <SocialLinks social={social} />
-        </div>
-      </div> */}
     </aside>
   );
 }

@@ -14,14 +14,18 @@ export const data = {
       "JavaScript",
       "HTML / CSS",
       "Node.js",
+      "Microfrontends",
       "MongoDB",
-      "Three.js"
+      "Github",
+      "Docker",
+      "CI/CD",
+
     ],
     tools: [
       "React",
-      "Github",
-      "Docker",
-      "WebGL"
+      "Next",
+      "Three.js",
+      "Express"
     ],
     focus: {
       intro: "Microservices",
@@ -30,8 +34,17 @@ export const data = {
   },
   projects: [
     {
+      name: "Installation App",
+      image: "img/project-installation.png",
+      url: "https://github.com/faultyagatha/custom-web-framework-ts",
+      description: "A work in process. Yet to become a 3d installation app for museums.",
+      status: "in process",
+      tags: ["Typescript", "React", "Redux", "Chakra UI", "Three.js"],
+      icon: "images/profile.jpg",
+    },
+    {
       name: "Custom Web Framework",
-      image: "img/project-ts.jpeg",
+      image: "img/project-ts.png",
       url: "https://github.com/faultyagatha/custom-web-framework-ts",
       description: "Created to learn advanced design patterns in Typescript.",
       status: "complete",
@@ -52,7 +65,7 @@ export const data = {
       name: "E-commerce App",
       image: "img/project-e-com-app.png",
       url: "https://github.com/faultyagatha/backend-typescript",
-      description: "E-commerce website selling VR experience",
+      description: "E-commerce full-stack project selling VR experience.",
       status: "complete",
       tags: ["Typescript", "React", "Redux", "Express", "MongoDB"],
       icon: "images/profile.jpg",
@@ -60,14 +73,19 @@ export const data = {
   ],
   social: [
     {
-      network: "Github",
+      network: "github",
       username: "faultyagatha",
       url: "https://github.com/faultyagatha"
     },
     {
-      network: "LinkedIn",
+      network: "linkedin",
       username: "valeria-barvinska",
       url: "https://www.linkedin.com/in/valeria-barvinska/"
+    },
+    {
+      network: "instagram",
+      username: "faultyagatha",
+      url: "https://www.instagram.com/faultyagatha/"
     }
   ]
 }
