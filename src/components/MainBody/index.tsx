@@ -1,6 +1,6 @@
 import React from "react";
 
-import { About } from "../About";
+// import { About } from "../About";
 import { Projects } from "../Projects";
 import { Skills } from "../Skills";
 import { Summary } from "../Summary";
@@ -9,7 +9,6 @@ import { Tools } from "../Tools";
 import { IMainBody } from '../../interfaces';
 
 export const MainBody = ({ profile, projects }: IMainBody): JSX.Element => {
-  console.log(profile);
   return (
     <main className="lg:w-3/4 lg:pl-8 xl:pl-12">
       <Summary profile={profile} />
@@ -23,7 +22,7 @@ export const MainBody = ({ profile, projects }: IMainBody): JSX.Element => {
         </div>
       </div>
 
-      {profile.about && <About about={profile.about} />}
+      {/* {profile.about && <About about={profile.about} />} */}
       <Projects projects={projects} />
     </main>
   );

@@ -19,7 +19,7 @@ export interface IProfile {
 export interface IProject {
   name: string;
   image: string;
-  liveUrl: string;
+  liveUrl?: string;
   url: string;
   description: string;
   status: string;

@@ -12,7 +12,8 @@ export const data = {
     skills: [
       "TypeScript",
       "JavaScript",
-      "HTML / CSS",
+      "HTML",
+      "CSS",
       "Node.js",
       "Microfrontends",
       "MongoDB",

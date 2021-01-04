@@ -3,12 +3,14 @@ import React from "react";
 import { Location } from "../Location";
 import { ProfileImage } from "../ProfileImage";
 import { SocialLinks } from "../SocialLinks";
+// import { Skills } from '../Skills';
+import { About } from "../About";
 
 import { ISidebar } from '../../interfaces';
 
 export const Sidebar = ({ profile, social }: ISidebar): JSX.Element => {
   return (
-    <aside className="flex justify-center w-full lg:w-1/4 lg:border-r border-line lg:px-6 xl:px-12">
+    <aside className="flex justify-center w-full lg:w-1/4 lg:px-6 xl:px-12">
       <div className="flex flex-col justify-between">
         <div>
           <h2 className="font-header font-light text-front text-2xl leading-none mb-4">
@@ -29,7 +31,9 @@ export const Sidebar = ({ profile, social }: ISidebar): JSX.Element => {
             />
           )}
           <br />
-          <div className="inline-flex items-center bg-front mt-6 w-full">
+          {profile.about && <About about={profile.about} />}
+          {/* {profile.skills && <Skills skills={profile.skills} />} */}
+          <div className="inline-flex mt-6 w-full">
             <SocialLinks social={social} />
           </div>
         </div>

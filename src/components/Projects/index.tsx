@@ -17,13 +17,13 @@ interface IProject {
 
 export const Projects = ({ projects }: IProject): JSX.Element => (
   <>
-    <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
+    <h5 className="font-header font-semibold text-front leading-relaxed text-sm uppercase mb-3">
       Projects
     </h5>
     <p>Below is a short list of my work-in progress and finished web projects. For more just hit my github link. </p>
     <p>
       <button
-        className="text-white bg-gradient-to-r from-green-400 to-blue-500 ...">
+        className="text-white leading-relaxed rounded-lg bg-gradient-to-r from-green-400 to-blue-500 ...">
         <a
           href="https://faultyagatha.github.io/"
           className="text-white m-1.5 no-underline hover:underline ...hover:opacity-75 transition-opacity duration-150"

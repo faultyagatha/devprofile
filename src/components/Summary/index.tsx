@@ -5,7 +5,7 @@ import { ISummary } from '../../interfaces';
 
 export const Summary = ({ profile }: ISummary): JSX.Element => (
   <div className="flex pb-8">
-    <div className="w-1/2 pr-4 lg:pr-12 border-r border-line">
+    <div className="w-1/2 pr-4 lg:pr-12">
       <h5 className="font-header font-semibold text-front text-sm uppercase">
         Company
       </h5>
