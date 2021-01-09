@@ -1,6 +1,5 @@
 import React from "react";
 
-// import { About } from "../About";
 import { Projects } from "../Projects";
 import { Skills } from "../Skills";
 import { Summary } from "../Summary";
@@ -10,7 +9,7 @@ import { IMainBody } from '../../interfaces';
 
 export const MainBody = ({ profile, projects }: IMainBody): JSX.Element => {
   return (
-    <main className="lg:w-3/4 lg:pl-8 xl:pl-12">
+    <main className="px-4 lg:w-3/4 lg:pl-8 xl:pl-12">
       <Summary profile={profile} />
 
       <div className="flex flex-wrap">
@@ -22,7 +21,6 @@ export const MainBody = ({ profile, projects }: IMainBody): JSX.Element => {
         </div>
       </div>
 
-      {/* {profile.about && <About about={profile.about} />} */}
       <Projects projects={projects} />
     </main>
   );

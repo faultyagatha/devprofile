@@ -5,12 +5,12 @@ import { ISocialLinks } from '../../interfaces';
 
 export const SocialLinks = ({ social }: ISocialLinks): JSX.Element => {
   return (
-    <div className="flex w-full justify-around">
+    <div className="pb-6 flex w-full justify-around">
       {social.map(({ network, url }) => {
         return (
           <a
             aria-label={network}
-            className="inline-flex w-12 justify-center items-center rounded-full -ml-3 hover:shadow-lg transition-shadow duration-150"
+            className="inline-flex w-12 rounded-full -ml-3 hover:shadow-lg transition-shadow duration-150"
             href={url}
             key={network}
             rel="noopener noreferrer"

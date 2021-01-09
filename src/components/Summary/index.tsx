@@ -9,7 +9,7 @@ export const Summary = ({ profile }: ISummary): JSX.Element => (
       <h5 className="font-header font-semibold text-front text-sm uppercase">
         Company
       </h5>
-      <h3 className="font-header font-light text-2xl text-front leading-tight">
+      <h3 className="font-header font-light lg:text-2xl text-front leading-tight">
         {profile.company}
       </h3>
       {profile.for_hire && (
@@ -23,7 +23,7 @@ export const Summary = ({ profile }: ISummary): JSX.Element => (
       <h5 className="font-header font-semibold text-front text-sm uppercase">
         Currently learning
       </h5>
-      <div className="font-header font-light text-2xl text-front leading-tight">
+      <div className="font-header font-light lg:text-2xl text-front leading-tight">
         {profile.focus.intro}
         {profile.focus.url && (
           <div>

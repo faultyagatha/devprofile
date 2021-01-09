@@ -7,7 +7,7 @@ import { ProjectTags } from "../ProjectTags";
 interface IProject {
   name: string;
   image: string;
-  liveUrl: string;
+  liveUrl?: string;
   url: string;
   description: string;
   status: string;
