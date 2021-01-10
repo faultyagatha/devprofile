@@ -8,6 +8,7 @@ export interface IProfile {
   for_hire: boolean;
   remote: boolean;
   about: string;
+  education: string;
   skills: string[];
   tools: string[];
   focus: {

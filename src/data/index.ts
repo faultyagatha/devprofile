@@ -9,6 +9,7 @@ export const data = {
     for_hire: true,
     remote: true,
     about: "I  am a full-stack web developer and creative technologist with practical experience in project management and strong communication skills.\n I can handle complex tasks well and take responsibility.",
+    education: "I have an MA degree in Creative Technologies where I have learnt applied interactive media, web development, and computer graphics. I have also M.Sc. in Cognitive Science where I have taken such classes as scientific programming in Python, mathematics for modelling, and computational models.",
     skills: [
       "TypeScript",
       "JavaScript",
@@ -27,6 +28,7 @@ export const data = {
     tools: [
       "React",
       "Next",
+      "Jest",
       "Three.js",
       "Express"
     ],

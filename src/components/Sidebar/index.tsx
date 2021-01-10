@@ -3,8 +3,8 @@ import React from "react";
 import { Location } from "../Location";
 import { ProfileImage } from "../ProfileImage";
 import { SocialLinks } from "../SocialLinks";
-// import { Skills } from '../Skills';
 import { About } from "../About";
+import { Education } from "../Education";
 
 import { ISidebar } from '../../interfaces';
 
@@ -32,7 +32,16 @@ export const Sidebar = ({ profile, social }: ISidebar): JSX.Element => {
           )}
           <br />
           {profile.about && <About about={profile.about} />}
-          {/* {profile.skills && <Skills skills={profile.skills} />} */}
+          {profile.education && <Education education={profile.education} />}
+          <button
+            className="text-white text-sm font-semibold leading-relaxed rounded-lg m-2 p-2 bg-gradient-to-r from-green-400 to-blue-500 ...">
+            <a
+              href="https://faultyagatha.github.io/"
+              className="text-white m-1.5 no-underline hover:underline ...hover:opacity-75 transition-opacity duration-150"
+              rel="noreferrer noopener"
+              target="_blank"
+            > HOW I ENJOY LIFE</a>
+          </button>
           <div className="inline-flex mt-6 w-full">
             <SocialLinks social={social} />
           </div>

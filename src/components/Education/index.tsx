@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-interface IAbout {
-  about: string;
+interface IEducation {
+  education: string;
 }
 
-export const About = ({ about }: IAbout): JSX.Element => (
+export const Education = ({ education }: IEducation): JSX.Element => (
   <>
     <h5 className="font-header font-semibold text-front text-sm uppercase mb-3">
-      About
+      Education
     </h5>
     <div className="font-text text-sm pb-12 leading-relaxed whitespace-pre-line">
-      {about}
+      {education}
     </div>
   </>
 );
