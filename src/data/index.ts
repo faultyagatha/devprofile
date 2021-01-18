@@ -3,7 +3,7 @@ export const data = {
     name: "Valeria Barvinska",
     email: "valeria.barvinska(at)gmail.com",
     profession: "Full-stack developer",
-    image: "/img/vb.png",
+    image: "img/vb.png",
     location: "Berlin, Germany",
     company: "Integrify",
     for_hire: true,
