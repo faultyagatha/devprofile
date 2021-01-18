@@ -10,7 +10,7 @@ export const SocialLinks = ({ social }: ISocialLinks): JSX.Element => {
         return (
           <a
             aria-label={network}
-            className="inline-flex w-12 rounded-full -ml-3 hover:shadow-lg transition-shadow duration-150"
+            className="inline-flex w-12 -ml-3"
             href={url}
             key={network}
             rel="noopener noreferrer"
