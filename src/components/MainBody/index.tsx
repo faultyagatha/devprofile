@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Projects } from "../Projects";
-import { Skills } from "../Skills";
-import { Summary } from "../Summary";
-import { Tools } from "../Tools";
+import { Projects } from '../Projects';
+import { Skills } from '../Skills';
+import { Summary } from '../Summary';
+import { Frameworks } from '../Frameworks';
 
 import { IMainBody } from '../../interfaces';
 
@@ -17,7 +17,7 @@ export const MainBody = ({ profile, projects }: IMainBody): JSX.Element => {
           {profile.skills && <Skills skills={profile.skills} />}
         </div>
         <div className="md:w-1/4 pb-12">
-          {profile.tools && <Tools tools={profile.tools} />}
+          {profile.frameworks && <Frameworks frameworks={profile.frameworks} />}
         </div>
       </div>
 

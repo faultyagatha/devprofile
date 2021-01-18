@@ -1,8 +1,6 @@
 import React from "react";
 
-interface IAbout {
-  about: string;
-}
+import { IAbout } from '../../interfaces';
 
 export const About = ({ about }: IAbout): JSX.Element => (
   <>

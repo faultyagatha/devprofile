@@ -1,21 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Project } from "../Project";
+import { Project } from '../Project';
+import { IProjects } from '../../interfaces';
 
-interface IProject {
-  projects: {
-    name: string,
-    image: string,
-    liveUrl?: string;
-    url: string,
-    description: string,
-    status: string,
-    tags: string[],
-    icon: string
-  }[]
-}
-
-export const Projects = ({ projects }: IProject): JSX.Element => (
+export const Projects = ({ projects }: IProjects): JSX.Element => (
   <>
     <h5 className="font-header font-semibold text-front leading-relaxed text-sm uppercase mb-3">
       Projects
@@ -27,7 +15,7 @@ export const Projects = ({ projects }: IProject): JSX.Element => (
         rel="noreferrer noopener"
         target="_blank"
       >
-        github link
+        github link.
         </a>
     </p>
     <br />

@@ -10,22 +10,11 @@ export interface IProfile {
   about: string;
   education: string;
   skills: string[];
-  tools: string[];
+  frameworks: string[];
   focus: {
     intro: string;
     url: string;
   }
-}
-
-export interface IProject {
-  name: string;
-  image: string;
-  liveUrl?: string;
-  url?: string;
-  description: string;
-  status: string;
-  tags: string[];
-  icon: string;
 }
 
 export interface ISummary {
@@ -69,6 +58,50 @@ export interface ILocation {
   location: string;
   remote: boolean;
   email: string;
+}
+
+export interface IAbout {
+  about: string;
+}
+
+export interface IEducation {
+  education: string;
+}
+
+export interface IProject {
+  name: string;
+  image: string;
+  liveUrl?: string;
+  url?: string;
+  description: string;
+  status: string;
+  tags: string[];
+}
+
+export interface IProjects {
+  projects: IProject[]
+}
+
+export interface IProjectStatus {
+  status: string;
+}
+
+export interface IProjectIcon {
+  url?: string;
+  liveUrl?: string;
+}
+
+export interface IFrameworks {
+  frameworks: string[];
+}
+
+export interface IProjectTags {
+  tags: string[];
+}
+
+export interface ISocialIcon {
+  name: string;
+  [otherProps: string]: any;
 }
 
 

@@ -1,8 +1,6 @@
 import React from 'react';
 
-interface IEducation {
-  education: string;
-}
+import { IEducation } from '../../interfaces';
 
 export const Education = ({ education }: IEducation): JSX.Element => (
   <>

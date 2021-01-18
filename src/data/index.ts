@@ -25,7 +25,7 @@ export const data = {
       "CI/CD",
 
     ],
-    tools: [
+    frameworks: [
       "React",
       "Next",
       "Jest",
@@ -44,8 +44,7 @@ export const data = {
       url: "https://github.com/faultyagatha/custom-web-framework-ts",
       description: "A work in process. Yet to become a scalable template that incorporates both 3D and 2D infographics.",
       status: "in process",
-      tags: ["Typescript", "React", "Redux", "Chakra UI", "Three.js"],
-      icon: "images/profile.jpg",
+      tags: ["Typescript", "React", "Redux", "Chakra UI", "Three.js"]
     },
     {
       name: "Custom Web Framework",
@@ -53,8 +52,7 @@ export const data = {
       url: "https://github.com/faultyagatha/custom-web-framework-ts",
       description: "A custom barebone scalable framework. The project was created to learn and practice advanced design patterns in Typescript.",
       status: "complete",
-      tags: ["Typescript"],
-      icon: "images/profile.jpg",
+      tags: ["Typescript"]
     },
     {
       name: "Flatuicolors-clone",
@@ -63,8 +61,7 @@ export const data = {
       url: "https://github.com/faultyagatha/flatuicolors-clone",
       description: "A clone of flatuicolors.com app created to learn Material UI.",
       status: "complete",
-      tags: ["Typescript", "React", "Redux", "Material UI"],
-      icon: "img/project-flatui-col.png",
+      tags: ["Typescript", "React", "Redux", "Material UI"]
     },
     {
       name: "E-commerce App",
@@ -72,8 +69,7 @@ export const data = {
       url: "https://github.com/faultyagatha/backend-typescript",
       description: "E-commerce full-stack MERN project selling VR experience.",
       status: "complete",
-      tags: ["Typescript", "React", "Redux", "Express", "MongoDB", "Jest"],
-      icon: "images/profile.jpg",
+      tags: ["Typescript", "React", "Redux", "Express", "MongoDB", "Jest"]
     },
     {
       name: "The Meaning of Game: Art game in browser",
@@ -81,8 +77,7 @@ export const data = {
       liveUrl: "https://online.adaf.gr/video/the-meaning-of-game/",
       description: "A short single-player art game made for the Athens Digital Arts Festival (ADAF). You can check it live on the ADAF archive page. If it's not there already, press 'How I enjoy life' button to your left.",
       status: "complete",
-      tags: ["Three.js", "React"],
-      icon: "images/profile.jpg",
+      tags: ["Three.js", "React"]
     }
   ],
   social: [

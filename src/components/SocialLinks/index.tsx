@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { SocialIcon } from "../SocialIcon";
+import { SocialIcon } from '../SocialIcon';
 import { ISocialLinks } from '../../interfaces';
 
 export const SocialLinks = ({ social }: ISocialLinks): JSX.Element => {

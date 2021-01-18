@@ -5,10 +5,7 @@ import {
   FaLinkedinIn
 } from "react-icons/fa";
 
-interface ISocialIcon {
-  name: string;
-  [otherProps: string]: any;
-}
+import { ISocialIcon } from '../../interfaces';
 
 export const SocialIcon = ({ name, ...otherProps }: ISocialIcon): JSX.Element => {
   const icons = {

@@ -1,8 +1,6 @@
-import React from "react";
+import React from 'react';
 
-interface IProjectTags {
-  tags: string[];
-}
+import { IProjectTags } from '../../interfaces';
 
 export const ProjectTags = ({ tags }: IProjectTags): JSX.Element => (
   <>

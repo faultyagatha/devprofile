@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Location } from "../Location";
-import { ProfileImage } from "../ProfileImage";
-import { SocialLinks } from "../SocialLinks";
-import { About } from "../About";
-import { Education } from "../Education";
+import { Location } from '../Location';
+import { ProfileImage } from '../ProfileImage';
+import { SocialLinks } from '../SocialLinks';
+import { About } from '../About';
+import { Education } from '../Education';
 
 import { ISidebar } from '../../interfaces';
 
@@ -12,7 +12,7 @@ export const Sidebar = ({ profile, social }: ISidebar): JSX.Element => {
   return (
     <aside className="flex justify-center w-full px-4 lg:w-1/4 lg:px-6 xl:px-12">
       <div className="flex flex-col justify-between">
-        <div>
+        <div className="flex flex-col">
           <h2 className="font-header font-light text-front text-2xl leading-none mb-4">
             {profile.profession}
           </h2>

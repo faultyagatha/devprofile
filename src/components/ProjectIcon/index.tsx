@@ -1,10 +1,7 @@
-import React from "react";
-import { FaGithub, FaEye } from "react-icons/fa";
+import React from 'react';
+import { FaGithub, FaEye } from 'react-icons/fa';
 
-interface IProjectIcon {
-  url?: string;
-  liveUrl?: string;
-}
+import { IProjectIcon } from '../../interfaces';
 
 export const ProjectIcon = ({ url, liveUrl }: IProjectIcon): JSX.Element => (
   <ul className="absolute right-0 bottom-0 mb-8 mr-8 text-back">

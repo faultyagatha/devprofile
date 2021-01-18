@@ -1,18 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { ProjectIcon } from "../ProjectIcon";
-import { ProjectStatus } from "../ProjectStatus";
-import { ProjectTags } from "../ProjectTags";
-
-interface IProject {
-  name: string;
-  image: string;
-  liveUrl?: string;
-  url: string;
-  description: string;
-  status: string;
-  tags: string[];
-}
+import { ProjectIcon } from '../ProjectIcon';
+import { ProjectStatus } from '../ProjectStatus';
+import { ProjectTags } from '../ProjectTags';
+import { IProject } from '../../interfaces';
 
 export const Project = ({
   name,
