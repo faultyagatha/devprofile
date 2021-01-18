@@ -17,7 +17,7 @@ export const Project = ({
 ): JSX.Element => {
   return (
     <div
-      className="relative flex flex-wrap bg-back-light p-4 lg:p-8 bg-no-repeat text-sm"
+      className="relative flex flex-wrap bg-back-light pr-4 pb-4 lg:pr-8 lg:pb-10 bg-no-repeat text-sm"
     >
       {image && (
         <div

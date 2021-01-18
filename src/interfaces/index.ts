@@ -101,7 +101,7 @@ export interface IProjectTags {
 
 export interface ISocialIcon {
   name: string;
-  [otherProps: string]: any;
+  [otherProps: string]: unknown;
 }
 
 

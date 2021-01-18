@@ -13,10 +13,10 @@ export const data = {
     skills: [
       "TypeScript",
       "JavaScript",
-      "Python",
       "HTML",
       "CSS",
-      "Microfrontends",
+      "Python",
+      "Microfrontend",
       "Node.js",
       "MongoDB",
       "Testing",
@@ -41,7 +41,7 @@ export const data = {
     {
       name: "Installation App",
       image: "img/project-installation.png",
-      url: "https://github.com/faultyagatha/custom-web-framework-ts",
+      // url: "https://github.com/faultyagatha/custom-web-framework-ts",
       description: "A work in process. Yet to become a scalable template that incorporates both 3D and 2D infographics.",
       status: "in process",
       tags: ["Typescript", "React", "Redux", "Chakra UI", "Three.js"]
