@@ -21,7 +21,7 @@ export interface IProject {
   name: string;
   image: string;
   liveUrl?: string;
-  url: string;
+  url?: string;
   description: string;
   status: string;
   tags: string[];
