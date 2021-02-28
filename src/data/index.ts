@@ -16,9 +16,9 @@ export const data = {
       "HTML",
       "CSS",
       "Python",
-      "Microfrontend",
-      "Node.js",
-      "MongoDB",
+      "Golang",
+      "Node",
+      "Databases",
       "Testing",
       "Github",
       "Docker",
@@ -27,9 +27,9 @@ export const data = {
     ],
     frameworks: [
       "React",
-      "Next",
+      "Nest",
       "Jest",
-      "Three.js",
+      "Three",
       "Express"
     ],
     focus: {
@@ -41,10 +41,10 @@ export const data = {
     {
       name: "Installation App",
       image: "img/project-installation.png",
-      // url: "https://github.com/faultyagatha/custom-web-framework-ts",
-      description: "A work in process. Yet to become a scalable template that incorporates both 3D and 2D infographics.",
+      liveUrl: "http://installation-app.s3-website.eu-central-1.amazonaws.com/",
+      description: "A work in process. Yet to become a scalable template that incorporates both 3D and 2D infographics. CD on AWS cloud with Github actions.",
       status: "in process",
-      tags: ["Typescript", "React", "Redux", "Chakra UI", "Three.js"]
+      tags: ["Typescript", "React", "Redux", "Chakra UI", "Three.js", "AWS"]
     },
     {
       name: "Custom Web Framework",
